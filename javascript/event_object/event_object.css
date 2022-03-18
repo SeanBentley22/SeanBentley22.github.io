@@ -1,0 +1,30 @@
+h1 {
+	text-align: center;
+	border: 1px solid black;
+}
+
+div > div {
+	padding-bottom:  5px;
+}
+p {
+	position: fixed;
+	bottom: 0px;
+	left: 20px;
+}
+
+img{
+	position: relative;
+	top: 2000px;
+	transform: rotate(-55deg);
+}
+#container {
+	position: fixed;
+	top: 110px;
+	left: 20px;
+}
+
+#line-container {
+	padding-top:  250px;
+	display: flex;
+	justify-content: center;
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<script src="animation.js" async></script>
+			<link rel="stylesheet" href="animation.css">
+			<title> Animations </title>
+		</head>
+		<body>
+
+			<h1> Animations </h1>
+
+			<div id="container">
+
+				<!-- SVG -->
+
+				<div class="text">
+					<h2> SVG </h2>
+					<ul>
+						<li> SVG elements are as interactive as normal HTML Elements because every shape we make has an underlying object in the DOM. </li>
+						<li> We can make a basic animation simply by modifying some property of an SVG element via the recursive callback function we pass into requestAnimationFrame(). </li>
+						<li> We could alternatively use CSS Animations instead of Javascipt's requestAnimationFrame() in most cases, as well. </li>
+					</ul>
+					<button id="switch" type="button"> Animate </button>
+				</div>
+
+				<div class="graphic">
+
+				      <svg width="250" height="275">
+				      	<rect x="105" y="0" width="40" height="10" fill="black"></rect>
+				        <path d="M 125 10 V 15" stroke="black"></path>
+	        			<rect id="grab" x="115" y="15" width="20" height="20" fill="blue"></rect>
+	      			  </svg>
+
+	      		</div>
+
+
+	      		<!-- Canvas -->
+
+					<div class="text">
+						<h2> Canvas </h2>
+						<ul>
+							<li> Crucially, shapes drawn to the canvas have no underlying object in the DOM. They are just pixels painted to the screen. There's no way to reference them afterwards. It means that,
+								<ol>
+									<li> We can't use CSS animations (i.e. keyframing properties), and must use requestAnimationFrame()</li>
+									<li>
+										We probably want to clear the canvas before updating the screen with a new drawing, using a function such as clearRect(). That is, we can't just modify a property like we did when using SVG. All the pixels painted during the last repaint would otherwise remain on the screen.
+									</li>
+								</ol>
+							<li> Because of the necessity of clearing everything before you redraw, we likely wouldn't pick Canvas if we had some animation that only moved one small part of a very big drawing. SVG would usually be more suitable in that case. </li>
+							<li>
+								However, because shapes we draw in canvas don't have to go through the extra work of becoming objects in the DOM, with their a data saved and a reference to them available, if we have an animation involving lots of tiny moving shapes, we could be better off using Canvas.
+							</li>
+						</ul>
+						<button id="switch2" type="button"> Animate </button>
+					</div>
+
+					<div class="graphic">
+		      			<canvas width="250" height="250"></canvas>
+		      		</div>
+
+		      		<br>
+		      		<br>
+		     </div>
+
+		</body>
+	</html>

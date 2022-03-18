@@ -1,0 +1,45 @@
+h1 {
+     border: 1px solid black;
+     text-align: center;
+ }
+
+h2 {
+    margin-top: 0px;
+}
+
+button {
+    margin-left: 20px;
+}
+
+ul {
+    width: 450px;
+}
+
+li{
+    padding-bottom: 5px;
+}
+
+ol {
+    padding-top: 10px;
+}
+
+.graphic{
+        padding-top: 20px;
+        text-align: center;
+}
+
+
+@media (min-width: 800px) {
+
+    #container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  1fr 1fr;
+    }
+
+    ul {
+    width: 620px;
+    }
+
+
+}

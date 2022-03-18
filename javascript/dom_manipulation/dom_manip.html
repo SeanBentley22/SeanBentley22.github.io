@@ -1,0 +1,36 @@
+<!doctype html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<script src="dom_manip.js" async></script>
+			<link rel="stylesheet" href="dom_manip.css">
+			<title> Manipulating the DOM </title>
+		</head>
+
+		<body>
+			<h1> Manipulating the DOM </h1>
+
+			<div id="blue"> text </div>
+			<button onclick="changeText()"> change text </button>
+			<button onclick="changeColor()"> change color </button>
+
+			<br>
+			<br>
+
+			<div id="book"> <img id="image" src="https://m.media-amazon.com/images/I/41csrdkolOL.jpg"  alt="text instead" height=200>
+			</div>
+			<button id="replace" onclick="replaceImage()"> Replace Image </button>
+
+			<br>
+			<br>
+
+			<div id="pshift">
+				<p> 1 </p>
+				<p> 2 </p>
+				<p> 3 </p>
+			</div>
+			<button onclick="sendLastUp()"> send last up </button>
+			<button id="a4" onclick="addFour()"> add four </button>
+
+		</body>
+	</html>

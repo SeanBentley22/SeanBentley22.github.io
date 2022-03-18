@@ -1,0 +1,115 @@
+<!doctype html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<script src="array_methods.js" async></script>
+			<link rel="stylesheet" href="array_methods.css">
+			<title> Useful Array Methods </title>
+		</head>
+		<body>
+
+			<h1> Useful Array Methods </h1>
+
+			<div id="container">
+
+				<!-- Map() -->
+
+				<div class="text">
+					<h2> map() </h2>
+					<ul>
+						<li> Like all three of these methods, map() is "non-destructive," which means a new, modified array is created rather than the original array being modified.</li>
+						<li> Generally, you can just provide map() one argument, a transformation function. It will be applied to each element in the array</li>
+						<li>
+						The transformation function is implicitly passed each element. All you have to do is provide a name.
+						</li>
+						<li>
+						Imagine we have an array containing the radii of our three circles to the right, something like <span> &nbsp;array = [20, 40, 60];&nbsp;</span> </li>
+						<li>
+						 Say we wanted to half the each radius. We could write something like <span> &nbsp;array.map( radius => radius / 2);&nbsp; </span> </li>
+						<li>
+						Have a go at calling the function. A new array will be returned from the call to map() with each element cut in two: <span> &nbsp;[10, 20, 30];&nbsp; </span>
+						</li>
+					</ul>
+					<button id="switch" type="button"> call </button>
+				</div>
+
+				<div class="graphic">
+
+					<svg width="500" height="240">
+						<circle cx="120" cy="120" r="20" fill="purple"></circle>
+						<circle cx="255" cy="120" r="40" fill="purple"></circle>
+						<circle cx="420" cy="120" r="60" fill="purple"></circle>
+					</svg>
+					
+	      		</div>
+
+	      		<!-- Filter() -->
+
+					<div class="text">
+						<h2> filter() </h2>
+						<ul>
+							<li>Like map(), generally you can just provide filter() one argument, a filtering function which runs each element through some test and returns boolean true or false. Did it pass or did it fail the test? </li>
+							<li>
+							Again, the function you define is, one by one, implicitly passed each element of the array it is called on. Let's call the variable "radius" again.
+							</li>
+							<li>
+							 Imagine this time we want to filter our array of radii such that we get back a new array with only radii greater than 30 units. We could write something like <span> &nbsp;array.filter( radius => radius > 30 );&nbsp; </span> 
+							</li>
+							<li>
+								The expression <span> &nbsp; radius > 30 &nbsp;</span>  is what evaluates to boolean true or false and decides whether to place the element into the returned array or not.
+							</li>
+							<li>
+								Have a go at calling this function. The array that is returned from the expression will only have a length of two: <span> &nbsp;[20, 30];&nbsp; </span>
+							</li>
+						</ul>
+						<button id="switch2" type="button"> call </button>
+					</div>
+
+					<div class="graphic">
+			      		<svg width="500" height="240">
+							<circle cx="120" cy="120" r="20" fill="purple"></circle>
+							<circle cx="255" cy="120" r="40" fill="purple"></circle>
+							<circle cx="420" cy="120" r="60" fill="purple"></circle>
+						</svg>
+		      		</div>
+
+		      	<!-- Reduce() -->
+
+					<div class="text">
+						<h2> reduce() </h2>
+						<ul>
+							<li> 
+								The concept of the reduce function is a little trickier.
+							</li>
+							<li>
+								Unlike the other two, reduce() doesn't return a new array. In fact, it doesn't return an array at all - rather, a single value. It is meant to "reduce" your array down to some kind of value which "summarizes" it.
+							</li>
+							<li>
+								Unlike filter() or map() you may have to provide two arguments to reduce(). The first, a function that does your reducing, the second, an initial value. Abstractly: <span> &nbsp;reduce( reducer , intitalVal )&nbsp;</span>
+							</li>
+							<li>
+								A typical use case of reduce would be taking an array of numbers and calling reduce() on it to get their sum. Our intital value will naturally be zero here. We could write something like the following: <span> &nbsp; array.reduce( (sum, radius) => sum + radius, 0 )&nbsp;</span>
+							</li>
+							<li>
+								As you can see, the reducer function itself takes two arguments. The first stores the result of the previous call. The second is the current array element - in our context, a radius. Starting from <span> &nbsp;array[0]&nbsp;</span>, we go on through adding the value of each element to the sum, which will begin at zero, as we specified.
+							</li>
+							<li>
+								Alternatively, we can leave out that initial value. If we do so, then our intial value is set to the value of <span> &nbsp;array[0]&nbsp;</span> and we start adding values to the sum instead from the next element, <span> &nbsp;array[1].&nbsp;</span> 
+							</li>
+							<li> Here, because we're performing addition, we'd get just the same answer. The expression would simply change to <span>&nbsp;array.reduce( (sum, radius) => sum + radius).&nbsp;</span> Try calling it! The return value here would be 120.
+						</ul>
+						<button id="switch3" type="button"> call </button>
+					</div>
+
+					<div class="graphic">
+		      			<svg width="500" height="240">
+							<circle cx="120" cy="120" r="20" fill="purple"></circle>
+							<circle cx="255" cy="120" r="40" fill="purple"></circle>
+							<circle cx="420" cy="120" r="60" fill="purple"></circle>
+						</svg>
+		      		</div>
+
+		     </div>
+
+		</body>
+	</html>
